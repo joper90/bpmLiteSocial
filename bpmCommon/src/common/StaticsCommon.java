@@ -3,8 +3,8 @@ package common;
 public class StaticsCommon {
 	public final static boolean TEST_MODE = false;
 	
-	public final static String BPM_GUARD_PATH = "http://localhost:7002/bpmGuard";
-	public final static String BPM_SERVER_PATH = "http://localhost:7001/bpmLite";
+	public final static String BPM_GUARD_PATH = "http://localhost:8088/bpmGuard";
+	public final static String BPM_SERVER_PATH = "http://localhost:8088/bpmLite";
 	
 	public final static String VERSION = "0.1";
 	
@@ -24,7 +24,7 @@ public class StaticsCommon {
 	public final static String INITIAL_GLOBAL_COUNT = "gCount";
 	public final static String INITIAL_GLOBAL_COUNT_START = "5000";
 	
-	public static enum STEP_TYPE {USER, AMXBPM, DB, EMAIL, POJO, TIBBR, DATABASE};
+	public static enum STEP_TYPE {USER, AMXBPM, DB, EMAIL, POJO, TIBBR};
 	public static enum GUID_KEY_MODE  {INJECTED,TAKEN,ACTIONED};
 	
 	public static boolean guardIsAlive = false;
@@ -36,7 +36,10 @@ public class StaticsCommon {
 	public static int FAILED = -1;
 	public static int WORKED = 0;
 	
-
+	//SpinTime after inital stasrt on the next step to find out if the calback has happened.
+	public static long	LOOP_SLEEP_TIME = 5000; // 5 seconds
+	public static int	LOOP_SLEEP_MAX_COUNT = 5; // 5 times around and around.
+	
 	// JMS Connection information
 
 	public static String					JMS_SERVER				= "localhost";

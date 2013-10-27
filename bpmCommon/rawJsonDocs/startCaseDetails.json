@@ -1,0 +1,14 @@
+{
+    	"docType":"",
+        "processId": "",
+        "callBackGuid": "",
+        "caseId": "",
+        "requireCallback": true,
+        "fieldDetails": {
+            "fieldId": "",
+            "initialValue": "",
+            "fieldType": "",
+            "name": ""
+        }
+    
+}

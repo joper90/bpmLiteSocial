@@ -1,0 +1,1 @@
+@mintty D:\git\bpmLiteSocial\bpmCommon\scripts\cleanCouch.sh

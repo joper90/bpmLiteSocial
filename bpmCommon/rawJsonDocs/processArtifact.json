@@ -1,0 +1,63 @@
+{
+    "docType": "",
+    "process": {
+        "uniqueGuid": "12345",
+        "processData": {
+            "steps": [
+                {
+                    "stepId": "",
+                    "stepName": "",
+                    "participants": [
+                        {
+                            "userGuid": ""
+                        }
+                    ],
+                    "extendedData": [
+                        {
+                            "name": "",
+                            "value": ""
+                        }
+                    ],
+                    "fieldData": [
+                        {
+                            "fieldId": ""
+                        }
+                    ],
+                    "nextStepId": [
+                        {
+                            "stepId": ""
+                        }
+                    ],
+                    "previousStepId": [
+                        {
+                            "stepId": ""
+                        }
+                    ],
+                    "globalData": [
+                        {
+                            "globalId": ""
+                        }
+                    ],
+                    "displayOnly": [
+                        {
+                            "fieldId": ""
+                        }
+                    ]
+                }
+            ],
+            "processName": "",
+            "processDescription": "",
+            "version": "",
+            "author": ""
+        }
+    },
+    "fields": [
+        {
+            "name": "joe",
+            "type": "",
+            "initialData": "",
+            "fieldId": "",
+            "global": ""
+        }
+    ]
+}

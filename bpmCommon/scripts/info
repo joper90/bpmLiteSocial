@@ -1,0 +1,12 @@
+To clean and reset the database.
+
+1) delete database.
+2) create database
+3) create design documents / views. for all's
+4) create initial count document (with process ids etc).
+
+Puting data with ID
+curl -X PUT http://127.0.0.1:5984/dvd-library/wall-e -d '{"Name":"Wall-E", "Format":"NTSC", "Studio":"Disney", "Year":2008, "Rating":"G"}'
+
+Putting data with _id
+curl -vX POST http://root:staff123@127.0.0.1:5984/basic/ -H 'Content-Type: application/json' -d '{"_id":"dfsf", "Name":"Wall-E", "Format":"NTSC", "Studio":"Disney", "Year":2008, "Rating":"G"}'
