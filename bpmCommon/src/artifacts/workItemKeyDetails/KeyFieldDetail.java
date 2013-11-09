@@ -1,5 +1,5 @@
 
-package artifacts.processArtifact;
+package artifacts.workItemKeyDetails;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,12 +16,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.googlecode.jsonschema2pojo")
 @JsonPropertyOrder({
-    "fieldId"
+    "fieldId",
+    "global"
 })
-public class FieldDatum {
+public class KeyFieldDetail {
 
     @JsonProperty("fieldId")
     private String fieldId;
+    @JsonProperty("global")
+    private Boolean global;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("fieldId")
@@ -32,6 +35,16 @@ public class FieldDatum {
     @JsonProperty("fieldId")
     public void setFieldId(String fieldId) {
         this.fieldId = fieldId;
+    }
+
+    @JsonProperty("global")
+    public Boolean getGlobal() {
+        return global;
+    }
+
+    @JsonProperty("global")
+    public void setGlobal(Boolean global) {
+        this.global = global;
     }
 
     @Override

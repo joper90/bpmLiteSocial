@@ -3,15 +3,19 @@ package artifacts.completeWorkItem;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.ektorp.support.CouchDbDocument;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.googlecode.jsonschema2pojo")
@@ -22,10 +26,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "action",
     "caseId"
 })
-public class CompleteWorkItem {
+public class CompleteWorkItem extends CouchDbDocument{
 
-    @JsonProperty("docType:")
-    private String docType_;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@JsonProperty("docType")
+    private String docType;
     @JsonProperty("processId")
     private String processId;
     @JsonProperty("stepId")
@@ -36,14 +44,14 @@ public class CompleteWorkItem {
     private String caseId;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("docType:")
-    public String getDocType_() {
-        return docType_;
+    @JsonProperty("docType")
+    public String getDocType() {
+        return docType;
     }
 
-    @JsonProperty("docType:")
-    public void setDocType_(String docType_) {
-        this.docType_ = docType_;
+    @JsonProperty("docType")
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     @JsonProperty("processId")

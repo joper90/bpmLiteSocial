@@ -12,14 +12,14 @@ import org.ektorp.support.CouchDbRepositorySupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import artifacts.startCaseDetails.StartCaseDetails;
 import repos.CompleteWorkItemRepo;
-import repos.CoreStausRepo;
+import repos.CoreStatusRepo;
 import repos.ProcessArtifactRepo;
 import repos.RequestCallbackRepo;
 import repos.StartCaseDetailsRepo;
 import repos.WorkItemKeyDetailsRepo;
-import common.BpmLiteException;
+
+import common.exceptions.BpmLiteException;
 
 public class CouchConnector {
 
@@ -65,7 +65,7 @@ public class CouchConnector {
 			this.addRepo(new RequestCallbackRepo(couchConnector));
 			this.addRepo(new StartCaseDetailsRepo(couchConnector));
 			this.addRepo(new WorkItemKeyDetailsRepo(couchConnector));
-			this.addRepo(new CoreStausRepo(couchConnector));
+			this.addRepo(new CoreStatusRepo(couchConnector));
 			
 			
 			
@@ -92,7 +92,7 @@ public class CouchConnector {
 	
 	public CouchDbRepositorySupport<?> getRepo(Class<?> repoClass) throws BpmLiteException
 	{
-		CouchDbRepositorySupport<?> couchDbRepositorySupport = this.repoMap.get(repoMap);
+		CouchDbRepositorySupport<?> couchDbRepositorySupport = this.repoMap.get(repoClass);
 		if (couchDbRepositorySupport == null) throw new BpmLiteException("No valid Repo for class " + repoClass.getSimpleName());
 		return couchDbRepositorySupport;
 	}

@@ -21,7 +21,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "fieldType",
     "name"
 })
-public class FieldDetails {
+public class StartField {
 
     @JsonProperty("fieldId")
     private String fieldId;

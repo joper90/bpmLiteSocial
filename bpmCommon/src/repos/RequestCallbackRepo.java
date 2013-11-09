@@ -13,6 +13,11 @@ public class RequestCallbackRepo extends CouchDbRepositorySupport<RequestCallBac
          super(RequestCallBack.class, db);
 	 }
 	
+	 public void add(RequestCallBack requestCallBack)
+	 {
+		 requestCallBack.setDocType("requestCallBack");
+		 super.add(requestCallBack);
+	 }
 	 //Add extra here
 	 
 	 /*

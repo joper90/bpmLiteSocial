@@ -12,6 +12,11 @@ public class StartCaseDetailsRepo extends CouchDbRepositorySupport<StartCaseDeta
 		super(StartCaseDetails.class, db);
 	}
 	
+	public void add(StartCaseDetails startCaseDetails)
+	{
+		startCaseDetails.setDocType("startCaseDetails");
+		super.add(startCaseDetails);
+	}
 	//Add all views/design requests here.. 
 	
 	

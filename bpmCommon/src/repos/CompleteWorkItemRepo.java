@@ -11,5 +11,11 @@ public class CompleteWorkItemRepo extends CouchDbRepositorySupport<CompleteWorkI
 	 public CompleteWorkItemRepo(CouchDbConnector db) {
          super(CompleteWorkItem.class, db);
  }
-	
+
+	 public void add(CompleteWorkItem completeWorkItem)
+	 {
+		 completeWorkItem.setDocType("completeWorkItem");
+		 super.add(completeWorkItem);
+	 }
+	 
 }

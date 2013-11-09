@@ -12,6 +12,12 @@ public class ProcessArtifactRepo extends CouchDbRepositorySupport<ProcessArtifac
 	 {
          super(ProcessArtifact.class, db);
 	 }
+	 
+	 public void add(ProcessArtifact processArtifact)
+	 {
+		 processArtifact.setDocType("processArtifact");
+		 super.add(processArtifact);
+	 }
 	
 	 //Add extra here
 	 

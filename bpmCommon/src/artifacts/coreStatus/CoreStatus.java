@@ -3,15 +3,19 @@ package artifacts.coreStatus;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.annotation.Generated;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.ektorp.support.CouchDbDocument;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.googlecode.jsonschema2pojo")
@@ -20,9 +24,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "serverStartTime",
     "elements"
 })
-public class CoreStatus {
+public class CoreStatus extends CouchDbDocument{
 
-    @JsonProperty("startId")
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@JsonProperty("docType")
+	private String docType;
+	@JsonProperty("startId")
     private String startId;
     @JsonProperty("serverStartTime")
     private String serverStartTime;
@@ -35,6 +45,16 @@ public class CoreStatus {
         return startId;
     }
 
+    @JsonProperty("docType")
+    public String getDocType() {
+        return docType;
+    }
+
+    @JsonProperty("docType")
+    public void setDocType(String docType) {
+        this.docType = docType;
+    }
+    
     @JsonProperty("startId")
     public void setStartId(String startId) {
         this.startId = startId;

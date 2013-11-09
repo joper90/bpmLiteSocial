@@ -1,7 +1,7 @@
 { 
 		"docType":"",
         "processId" :"",
-        "worked" : "",
+        "worked" : true,
         "stepId" : "",
         "uniqueFormGuid":"",
         "userKey":"",
@@ -9,6 +9,6 @@
         "displayOnly":"",
         "orderList":"",
         "callBackGuid":"",
-        "keyFieldDetails":{"fieldId":"","global":true}
+        "keyFieldDetails":[{"fieldId":"","global":true}]
     
 }

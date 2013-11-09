@@ -1,5 +1,6 @@
 {
     "startId": "",
+    docType : "",
     "serverStartTime": "",
     "elements": {
         "dynamicKey": "",

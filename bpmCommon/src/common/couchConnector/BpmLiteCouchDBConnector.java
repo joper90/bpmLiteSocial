@@ -60,6 +60,7 @@ public class BpmLiteCouchDBConnector {
 		return db;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public boolean addRepo(CouchDbRepositorySupport<?> repoToAdd)
 	{
 		Class<? extends CouchDbRepositorySupport> clazz = repoToAdd.getClass();

@@ -4,12 +4,11 @@ import org.ektorp.CouchDbConnector;
 import org.ektorp.support.CouchDbRepositorySupport;
 
 import artifacts.coreStatus.CoreStatus;
-import artifacts.processArtifact.ProcessArtifact;
 
 
-public class CoreStausRepo extends CouchDbRepositorySupport<CoreStatus> {
+public class CoreStatusRepo extends CouchDbRepositorySupport<CoreStatus> {
 
-	 public CoreStausRepo(CouchDbConnector db) 
+	 public CoreStatusRepo(CouchDbConnector db) 
 	 {
          super(CoreStatus.class, db);
 	 }
@@ -26,4 +25,9 @@ public class CoreStausRepo extends CouchDbRepositorySupport<CoreStatus> {
 	  * 
 	  * 
 	  */
+	 
+	 public void add(CoreStatus entity) {
+		 entity.setDocType("coreStatus");
+		 super.add(entity);
+	 }
 }

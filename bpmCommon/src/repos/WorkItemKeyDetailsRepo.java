@@ -12,7 +12,13 @@ public class WorkItemKeyDetailsRepo extends CouchDbRepositorySupport<WorkItemKey
 	 {
          super(WorkItemKeyDetails.class, db);
 	 }
-	
+	 
+	 public void add(WorkItemKeyDetails workItemKeyDetails)
+	 {
+		 workItemKeyDetails.setDocType("workItemKeyDetails");
+		 super.add(workItemKeyDetails);
+		 
+	 }
 	 //Add extra here
 	 
 	 /*

@@ -18,7 +18,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonPropertyOrder({
     "globalId"
 })
-public class GlobalDatum {
+public class GlobalData {
 
     @JsonProperty("globalId")
     private String globalId;

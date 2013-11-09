@@ -1,17 +1,23 @@
 
 package artifacts.startCaseDetails;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
 import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.ektorp.support.CouchDbDocument;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.googlecode.jsonschema2pojo")
@@ -21,11 +27,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "callBackGuid",
     "caseId",
     "requireCallback",
-    "fieldDetails"
+    "startFields"
 })
-public class StartCaseDetails {
+public class StartCaseDetails extends CouchDbDocument {
 
-    @JsonProperty("docType")
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@JsonProperty("docType")
     private String docType;
     @JsonProperty("processId")
     private String processId;
@@ -35,8 +45,8 @@ public class StartCaseDetails {
     private String caseId;
     @JsonProperty("requireCallback")
     private Boolean requireCallback;
-    @JsonProperty("fieldDetails")
-    private FieldDetails fieldDetails;
+    @JsonProperty("startFields")
+    private List<StartField> startFields = new ArrayList<StartField>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("docType")
@@ -89,14 +99,14 @@ public class StartCaseDetails {
         this.requireCallback = requireCallback;
     }
 
-    @JsonProperty("fieldDetails")
-    public FieldDetails getFieldDetails() {
-        return fieldDetails;
+    @JsonProperty("startFields")
+    public List<StartField> getStartFields() {
+        return startFields;
     }
 
-    @JsonProperty("fieldDetails")
-    public void setFieldDetails(FieldDetails fieldDetails) {
-        this.fieldDetails = fieldDetails;
+    @JsonProperty("startFields")
+    public void setStartFields(List<StartField> startFields) {
+        this.startFields = startFields;
     }
 
     @Override

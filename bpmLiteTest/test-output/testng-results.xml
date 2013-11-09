@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="799" started-at="2013-11-05T14:54:14Z" finished-at="2013-11-05T14:54:15Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="799" started-at="2013-11-05T14:54:14Z" finished-at="2013-11-05T14:54:15Z">
+      <class name="bpmCommonTests.CommonRepoTests">
+        <test-method status="PASS" signature="setupConnector()[pri:0, instance:bpmCommonTests.CommonRepoTests@f32b815]" name="setupConnector" duration-ms="318" started-at="2013-11-05T14:54:14Z" finished-at="2013-11-05T14:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupConnector -->
+        <test-method status="PASS" signature="completeWorkItemRepoTest()[pri:0, instance:bpmCommonTests.CommonRepoTests@f32b815]" name="completeWorkItemRepoTest" duration-ms="166" started-at="2013-11-05T14:54:15Z" depends-on-methods="bpmCommonTests.CommonRepoTests.setupConnector" finished-at="2013-11-05T14:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- completeWorkItemRepoTest -->
+        <test-method status="PASS" signature="coreStatusRepoTest()[pri:0, instance:bpmCommonTests.CommonRepoTests@f32b815]" name="coreStatusRepoTest" duration-ms="48" started-at="2013-11-05T14:54:15Z" depends-on-methods="bpmCommonTests.CommonRepoTests.completeWorkItemRepoTest" finished-at="2013-11-05T14:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- coreStatusRepoTest -->
+        <test-method status="PASS" signature="processArtifactRepoTest()[pri:0, instance:bpmCommonTests.CommonRepoTests@f32b815]" name="processArtifactRepoTest" duration-ms="95" started-at="2013-11-05T14:54:15Z" depends-on-methods="bpmCommonTests.CommonRepoTests.coreStatusRepoTest" finished-at="2013-11-05T14:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- processArtifactRepoTest -->
+        <test-method status="PASS" signature="requestCallBackRepoTets()[pri:0, instance:bpmCommonTests.CommonRepoTests@f32b815]" name="requestCallBackRepoTets" duration-ms="45" started-at="2013-11-05T14:54:15Z" depends-on-methods="bpmCommonTests.CommonRepoTests.processArtifactRepoTest" finished-at="2013-11-05T14:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestCallBackRepoTets -->
+        <test-method status="PASS" signature="startCaseDetailsRepoTest()[pri:0, instance:bpmCommonTests.CommonRepoTests@f32b815]" name="startCaseDetailsRepoTest" duration-ms="57" started-at="2013-11-05T14:54:15Z" depends-on-methods="bpmCommonTests.CommonRepoTests.requestCallBackRepoTets" finished-at="2013-11-05T14:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startCaseDetailsRepoTest -->
+        <test-method status="PASS" signature="workItemKeyRepoTest()[pri:0, instance:bpmCommonTests.CommonRepoTests@f32b815]" name="workItemKeyRepoTest" duration-ms="54" started-at="2013-11-05T14:54:15Z" depends-on-methods="bpmCommonTests.CommonRepoTests.startCaseDetailsRepoTest" finished-at="2013-11-05T14:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- workItemKeyRepoTest -->
+      </class> <!-- bpmCommonTests.CommonRepoTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

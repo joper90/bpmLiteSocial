@@ -4,11 +4,11 @@
         "callBackGuid": "",
         "caseId": "",
         "requireCallback": true,
-        "fieldDetails": {
+        "startFields": [{
             "fieldId": "",
             "initialValue": "",
             "fieldType": "",
             "name": ""
-        }
+        }]
     
 }

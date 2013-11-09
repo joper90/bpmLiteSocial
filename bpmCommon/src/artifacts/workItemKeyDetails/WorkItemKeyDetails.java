@@ -1,17 +1,23 @@
 
 package artifacts.workItemKeyDetails;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
 import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.ektorp.support.CouchDbDocument;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("com.googlecode.jsonschema2pojo")
@@ -28,14 +34,18 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "callBackGuid",
     "keyFieldDetails"
 })
-public class WorkItemKeyDetails {
+public class WorkItemKeyDetails extends CouchDbDocument{
 
-    @JsonProperty("docType")
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@JsonProperty("docType")
     private String docType;
     @JsonProperty("processId")
     private String processId;
     @JsonProperty("worked")
-    private String worked;
+    private Boolean worked;
     @JsonProperty("stepId")
     private String stepId;
     @JsonProperty("uniqueFormGuid")
@@ -51,7 +61,7 @@ public class WorkItemKeyDetails {
     @JsonProperty("callBackGuid")
     private String callBackGuid;
     @JsonProperty("keyFieldDetails")
-    private KeyFieldDetails keyFieldDetails;
+    private List<KeyFieldDetail> keyFieldDetails = new ArrayList<KeyFieldDetail>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("docType")
@@ -75,12 +85,12 @@ public class WorkItemKeyDetails {
     }
 
     @JsonProperty("worked")
-    public String getWorked() {
+    public Boolean getWorked() {
         return worked;
     }
 
     @JsonProperty("worked")
-    public void setWorked(String worked) {
+    public void setWorked(Boolean worked) {
         this.worked = worked;
     }
 
@@ -155,12 +165,12 @@ public class WorkItemKeyDetails {
     }
 
     @JsonProperty("keyFieldDetails")
-    public KeyFieldDetails getKeyFieldDetails() {
+    public List<KeyFieldDetail> getKeyFieldDetails() {
         return keyFieldDetails;
     }
 
     @JsonProperty("keyFieldDetails")
-    public void setKeyFieldDetails(KeyFieldDetails keyFieldDetails) {
+    public void setKeyFieldDetails(List<KeyFieldDetail> keyFieldDetails) {
         this.keyFieldDetails = keyFieldDetails;
     }
 

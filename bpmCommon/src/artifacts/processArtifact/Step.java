@@ -39,13 +39,13 @@ public class Step {
     @JsonProperty("extendedData")
     private List<ExtendedDatum> extendedData = new ArrayList<ExtendedDatum>();
     @JsonProperty("fieldData")
-    private List<FieldDatum> fieldData = new ArrayList<FieldDatum>();
+    private List<FieldData> fieldData = new ArrayList<FieldData>();
     @JsonProperty("nextStepId")
     private List<NextStepId> nextStepId = new ArrayList<NextStepId>();
     @JsonProperty("previousStepId")
     private List<PreviousStepId> previousStepId = new ArrayList<PreviousStepId>();
     @JsonProperty("globalData")
-    private List<GlobalDatum> globalData = new ArrayList<GlobalDatum>();
+    private List<GlobalData> globalData = new ArrayList<GlobalData>();
     @JsonProperty("displayOnly")
     private List<DisplayOnly> displayOnly = new ArrayList<DisplayOnly>();
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
@@ -91,12 +91,12 @@ public class Step {
     }
 
     @JsonProperty("fieldData")
-    public List<FieldDatum> getFieldData() {
+    public List<FieldData> getFieldData() {
         return fieldData;
     }
 
     @JsonProperty("fieldData")
-    public void setFieldData(List<FieldDatum> fieldData) {
+    public void setFieldData(List<FieldData> fieldData) {
         this.fieldData = fieldData;
     }
 
@@ -121,12 +121,12 @@ public class Step {
     }
 
     @JsonProperty("globalData")
-    public List<GlobalDatum> getGlobalData() {
+    public List<GlobalData> getGlobalData() {
         return globalData;
     }
 
     @JsonProperty("globalData")
-    public void setGlobalData(List<GlobalDatum> globalData) {
+    public void setGlobalData(List<GlobalData> globalData) {
         this.globalData = globalData;
     }
 

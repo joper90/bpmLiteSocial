@@ -1,6 +1,7 @@
 @echo off
 echo Generating all json mappings..
 
+
 call jsonschema2pojo.bat -s ..\rawJsonDocs\processArtifact.json -T JSON -t ..\src -p artifacts.processArtifact
 echo done.. [processArtifacts]
 call jsonschema2pojo.bat -s ..\rawJsonDocs\completeWorkItem.json -T JSON -t ..\src -p artifacts.completeWorkItem 
