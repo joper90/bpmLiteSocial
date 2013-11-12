@@ -14,6 +14,8 @@ call jsonschema2pojo.bat -s ..\rawJsonDocs\startCaseDetails.json -T JSON -t ..\s
 echo done.. [startCaseDetails]
 call jsonschema2pojo.bat -s ..\rawJsonDocs\coreStatus.json -T JSON -t ..\src -p artifacts.coreStatus 
 echo done.. [coreStatus]
+call jsonschema2pojo.bat -s ..\rawJsonDocs\serverConnection.json -T JSON -t ..\src -p artifacts.serverConnection 
+echo done.. [serverConnection]
 echo all done...
 
 pause

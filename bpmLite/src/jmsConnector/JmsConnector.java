@@ -76,14 +76,13 @@ public class JmsConnector implements  ExceptionListener, MessageListener {
 
 	}
 
-	@Override
 	public void onMessage(Message message) {
 		System.out.println("Got a message [BPMLite Server]" );
 		//JmsReceiveParser jmsRe = new JmsReceiveParser();
 		//jmsRe.parseData(message);
 	}
 
-	@Override
+
 	public void onException(JMSException e) {
 		/* print the connection exception status */
 		System.err.println("CONNECTION EXCEPTION: " + e.getMessage());

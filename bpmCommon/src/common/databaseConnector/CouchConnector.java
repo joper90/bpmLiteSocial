@@ -18,6 +18,7 @@ import repos.ProcessArtifactRepo;
 import repos.RequestCallbackRepo;
 import repos.StartCaseDetailsRepo;
 import repos.WorkItemKeyDetailsRepo;
+import artifacts.serverConnection.ServerConnection;
 
 import common.exceptions.BpmLiteException;
 
@@ -31,29 +32,48 @@ public class CouchConnector {
 	
 	private Logger logger = LoggerFactory.getLogger(CouchConnector.class);
 	
-	public CouchConnector(String database, String url, String username, String password) throws BpmLiteException
+	public CouchConnector(ServerConnection serverConnection) 	{
+		createConnection(serverConnection);
+	}
+	
+	public CouchConnector(String database, String url, String username, String password) 
 	{
-		try {
+	
+		ServerConnection serverConnection = new ServerConnection();
+		serverConnection.setServer(database);
+		serverConnection.setUrl(url);
+		serverConnection.setUser(username);
+		serverConnection.setPassword(password);
+		
+		createConnection(serverConnection);
+		
+		
+				
+	}
+	
+	private void createConnection(ServerConnection serverConnection) 
+	{
+	try {
 			
-			logger.info("Attempting to connect to database : {} with url {}", database, url);
-			logger.info("Using username : {} and password : {}", username, password);
+			logger.info("Attempting to connect to database : {} with url {}", serverConnection.getServer(), serverConnection.getUrl());
+			logger.info("Using username : {} and password : {}", serverConnection.getUser(), serverConnection.getPassword());
 			
 			httpClient = new StdHttpClient.Builder()
-			        .url(url)
-			        .username(username)
-			        .password(password)
+			        .url(serverConnection.getUrl())
+			        .username(serverConnection.getUser())
+			        .password(serverConnection.getPassword())
 			        .build();
 			
 			dbInstance = new StdCouchDbInstance(httpClient);
 			// if the second parameter is true, the database will be created if it doesn't exists
-			couchConnector = dbInstance.createConnector(database, false); // do not create if not exists.
+			couchConnector = dbInstance.createConnector(serverConnection.getServer(), false); // do not create if not exists.
 			
 			if (couchConnector == null)
 			{
 				logger.warn("FAIL - cannot connect to the databaes..");
 			}else
 			{
-				logger.info("Sucess. connected to {}", database);
+				logger.info("Sucess. connected to {}", serverConnection.getServer());
 			}
 			
 			//Create the map
@@ -71,10 +91,8 @@ public class CouchConnector {
 			
 		} catch (MalformedURLException e) {
 			logger.warn("Cannot parse url...");
-			throw new BpmLiteException("Cannot Parse requested database url",e);
+			
 		}
-		
-				
 	}
 	
 	public CouchDbConnector getConnection() throws BpmLiteException

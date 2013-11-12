@@ -1,0 +1,6 @@
+{
+    "server":"basictest",
+    "url":"http://127.0.0.1:5984/basictest",
+    "user":"root",
+    "password":"staff123"
+}
